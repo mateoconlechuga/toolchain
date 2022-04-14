@@ -94,7 +94,7 @@
 <span id="printf"></span><h1>Using printf Functions<a class="headerlink" href="#using-printf-functions" title="Permalink to this headline"></a></h1>
 <div class="section" id="what-s-the-deal-with-printf">
 <h2>What’s the deal with printf?<a class="headerlink" href="#what-s-the-deal-with-printf" title="Permalink to this headline"></a></h2>
-<p>The <cite>printf</cite> and related functions (<cite>sprintf</cite>, <cite>vsprintf</cite>, etc.) are based on a relatively <a class="reference external" href="https://github.com/CE-Programming/toolchain/commit/fb0f546f0daa3fa33f6cefe764b8f3dc328de991">small implementation</a>.
+<p>The <cite>printf</cite> and related functions (<cite>sprintf</cite>, <cite>vsprintf</cite>, etc.) are based on a relatively <a class="reference external" href="https://github.com/CE-Programming/toolchain/blob/master/src/std/shared/nanoprintf.c">small implementation</a>.
 However, they contribute around 7.5KiB to the resultant program.
 It is highly recommended to not use <cite>printf</cite> and related functions at all because of this.
 If you insist on using these functions, this page details how to do so in the next section.</p>
