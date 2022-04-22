@@ -295,7 +295,7 @@ jobs:
 
   deploy-nightly:
     runs-on: ubuntu-latest
-    needs: build
+    needs: test
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
     steps:
