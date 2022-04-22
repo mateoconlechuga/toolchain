@@ -115,7 +115,7 @@ jobs:
       - name: Zip toolchain
         if: runner.os == 'Windows'
         run: |
-          cd /D ${{env.CEDEV}}\.. && 7z a -tzip CEdev-${{runner.os}}.zip CEdev
+          cd ${{env.CEDEV}}/.. && 7z a -tzip CEdev-${{runner.os}}.zip CEdev
 
       - name: Upload Linux/MacOS CEdev
         if: runner.os != 'Windows'
@@ -164,7 +164,7 @@ jobs:
       - name: Extract Artifact Contents
         if: runner.os == 'Windows'
         run: |
-         cd /D ${{github.workspace}} && 7z x CEdev-${{runner.os}}.zip
+         cd ${{github.workspace}} && 7z x CEdev-${{runner.os}}.zip
 
   deploy-nightly:
     runs-on: ubuntu-latest
