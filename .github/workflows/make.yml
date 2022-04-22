@@ -111,6 +111,14 @@ jobs:
           chmod +x ${{env.CEDEV_BIN}}/*
           tar -C ${{env.CEDEV}}/.. -czvf CEdev-${{runner.os}}.tar.gz CEdev
 
+      - name: Zip toolchain
+        if: runner.os == 'Windows'
+        uses: thedoctor0/zip-release@master
+        with:
+          type: zip
+          filename: CEdev-${{runner.os}}.zip
+          directory: CEdev
+
       - name: Upload Linux/MacOS CEdev
         if: runner.os != 'Windows'
         uses: actions/upload-artifact@v2
@@ -123,7 +131,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: CEdev-${{runner.os}}
-          path: ${{env.CEDEV}}
+          path: CEdev-${{runner.os}}.zip
 
   deploy-nightly:
     runs-on: ubuntu-latest
@@ -131,29 +139,21 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
     steps:
-      - name: Download CEdev
-        if: runner.os == 'Windows'
+      - name: Download CEdev Linux
         uses: actions/download-artifact@v2
         with:
-          name: CEdev-${{runner.os}}
-          path: ${{env.CEDEV}}
-      - name: Download CEdev
-        if: runner.os != 'Windows'
+          name: CEdev-Linux
+          path: ${{github.workspace}}
+      - name: Download CEdev Windows
         uses: actions/download-artifact@v2
         with:
-          name: CEdev-${{runner.os}}
+          name: CEdev-Windows
           path: ${{github.workspace}}
 
-      - name: Archive Release
-        if: runner.os == 'Linux'
-        run: mv CEdev-${{runner.os}}.tar.gz linux_CEdev_nightly.tar.gz
-      - name: Archive Release
-        if: runner.os == 'Windows'
-        uses: thedoctor0/zip-release@master
-        with:
-          type: 'zip'
-          filename: 'windows_CEdev_nightly.zip'
-          directory: ${{env.CEDEV}}
+      - name: Rename Artifacts
+        run: |
+          mv CEdev-Linux.tar.gz CEdev-Linux-nightly.tar.gz
+          mv CEdev-Windows.zip CEdev-Windows-nightly.zip
 
       - name: Update nightly release
         uses: pyTooling/Actions/releaser@main
@@ -162,5 +162,5 @@ jobs:
           rm: true
           token: ${{secrets.GITHUB_TOKEN}}
           files: |
-            windows_CEdev_nightly.tar.gz
-            linux_CEdev_nightly.tar.gz
+            CEdev-Linux-nightly.tar.gz
+            CEdev-Windows-nightly.zip
