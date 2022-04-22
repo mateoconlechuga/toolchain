@@ -117,7 +117,7 @@ jobs:
         with:
           type: zip
           filename: CEdev-${{runner.os}}.zip
-          directory: CEdev
+          path: CEdev
 
       - name: Upload Linux/MacOS CEdev
         if: runner.os != 'Windows'
