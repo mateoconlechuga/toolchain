@@ -155,12 +155,12 @@ jobs:
           filename: 'windows_CEdev_nightly.zip'
           directory: ${{env.CEDEV}}
 
-       - name: Update nightly release
-         uses: pyTooling/Actions/releaser@main
-         with:
-           tag: nightly
-           rm: true
-           token: ${{secrets.GITHUB_TOKEN}}
+      - name: Update nightly release
+        uses: pyTooling/Actions/releaser@main
+        with:
+          tag: nightly
+          rm: true
+          token: ${{secrets.GITHUB_TOKEN}}
           files: |
             windows_CEdev_nightly.tar.gz
             linux_CEdev_nightly.tar.gz
