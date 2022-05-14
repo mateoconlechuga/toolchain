@@ -46,6 +46,7 @@
 <p class="caption"><span class="caption-text">Helpful Information</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../static/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../static/ides.html">Using the Toolchain in an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../static/git.html">Using Git For Revision Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../static/coding-guidelines.html">General Coding Guidelines</a></li>
 </ul>
@@ -70,8 +71,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../headers/index.html">CE Toolchain Specific Headers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../headers/sys/index.html">CE Hardware Headers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../headers/ti/index.html">TI Operating System Headers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../static/debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../static/makefile-options.html">Makefile Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../static/hardware.html">Calculator Hardware Overview</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contributing</span></p>
 <ul>
@@ -283,11 +287,17 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <td><p>kb_Graph</p></td>
 <td><p>kb_Trace</p></td>
 <td><p>kb_Zoom</p></td>
-<td><p>kb_Window</p></td>
-<td><p>kb_Yequ</p></td>
+<td><p>kb_Window</p>
+<p>kb_Fenetre</p>
+</td>
+<td><p>kb_Yequ</p>
+<p>kb_Fx</p>
+</td>
 <td><p>kb_2nd</p></td>
 <td><p>kb_Mode</p></td>
-<td><p>kb_Del</p></td>
+<td><p>kb_Del</p>
+<p>kb_Suppr</p>
+</td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
 <td></td>
@@ -295,7 +305,9 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <td><p>kb_Ln</p></td>
 <td><p>kb_Log</p></td>
 <td><p>kb_Square</p></td>
-<td><p>kb_Recip</p></td>
+<td><p>kb_Recip</p>
+<p>kb_TglExact</p>
+</td>
 <td><p>kb_Math</p></td>
 <td><p>kb_Alpha</p></td>
 </tr>
@@ -305,8 +317,12 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <td><p>kb_4</p></td>
 <td><p>kb_7</p></td>
 <td><p>kb_Comma</p></td>
-<td><p>kb_Sin</p></td>
-<td><p>kb_Apps</p></td>
+<td><p>kb_Sin</p>
+<p>kb_Trig</p>
+</td>
+<td><p>kb_Apps</p>
+<p>kb_Matrice</p>
+</td>
 <td><p>kb_GraphVar</p></td>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
@@ -315,7 +331,9 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <td><p>kb_5</p></td>
 <td><p>kb_8</p></td>
 <td><p>kb_LParen</p></td>
-<td><p>kb_Cos</p></td>
+<td><p>kb_Cos</p>
+<p>kb_Resol</p>
+</td>
 <td><p>kb_Prgm</p></td>
 <td><p>kb_Stat</p></td>
 </tr>
@@ -325,7 +343,9 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <td><p>kb_6</p></td>
 <td><p>kb_9</p></td>
 <td><p>kb_RParen</p></td>
-<td><p>kb_Tan</p></td>
+<td><p>kb_Tan</p>
+<p>kb_Frac</p>
+</td>
 <td><p>kb_Vars</p></td>
 <td></td>
 </tr>
@@ -336,7 +356,9 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <td><p>kb_Mul</p></td>
 <td><p>kb_Div</p></td>
 <td><p>kb_Power</p></td>
-<td><p>kb_Clear</p></td>
+<td><p>kb_Clear</p>
+<p>kb_Annul</p>
+</td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>7</p></td>
